@@ -1,6 +1,6 @@
 const sliderFill = document.querySelector('.fill')
 const timeLeftText = document.querySelector('#time-left')
-const body = document.querySelector('.body')
+// const body = document.querySelector('.body')
 const startCount = 10
 let timeLeft = startCount
 
@@ -15,7 +15,7 @@ const timerId = setInterval(() => {
         timeLeftText.style.color = 'yellow'
         sliderFill.style.backgroundColor = 'yellow' 
         sliderFill.style.boxShadow = '0 0 10px yellow' 
-        body.style.backgroundColor = 'yellow'
+        // body.style.backgroundColor = 'yellow'
     }
   
 // change the color of the text to red when there are 5 seconds left
