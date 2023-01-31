@@ -26,14 +26,14 @@ careful.innerHTML =
 
     .pulse 
     {
-        animation: pulse 2s infinite;
+        animation: pulse 1s infinite;
     }
     @keyframes pulse-animation
     0% {
         box-shadow: 0 0 0 0px rgba(159, 43, 43, 0.5);
       }
       100% {
-        box-shadow: 0 0 0 20px rgba(149, 43, 43, 0);
+        box-shadow: 0 0 0 100px rgba(149, 43, 43, 0);
       }
     }
     }
@@ -108,9 +108,9 @@ const timerId = setInterval(() => {
     
     // change the color of the text to orange when there are 30 seconds left
     if (timeLeft <= 30) {
-        timeLeftText.style.color = 'rgb(198, 81, 2'
-        sliderFill.style.backgroundColor = 'orange' 
-        sliderFill.style.boxShadow = '0 0 20px orange' 
+        timeLeftText.style.color = 'rgb(198, 81, 2)'
+        sliderFill.style.backgroundColor = 'rgb(198, 81, 2)' 
+        sliderFill.style.boxShadow = 'rgb(198, 81, 2)' 
         document.body.appendChild(warning)
     } 
     
@@ -118,7 +118,7 @@ const timerId = setInterval(() => {
     if (timeLeft <= 10) {
         timeLeftText.style.color = 'red'
         sliderFill.style.backgroundColor = 'rgb(159, 43, 43)'
-        sliderFill.style.boxShadow = '0 0 10px red'
+        sliderFill.style.boxShadow = '0 0 30px red'
         document.body.appendChild(danger)
     }
 
@@ -158,4 +158,25 @@ function surprise()
         timeLeftText.append(circleElement)
       }, i * 5)
     }
-  }
+}
+
+
+
+
+
+// function to reset the timer
+function reset()
+{
+    timeLeft = startCount
+    timeLeftText.textContent = timeLeft
+    sliderFill.style.width = (timeLeft /startCount) * 100 + '%'
+    timeLeftText.style.color = 'white'
+    sliderFill.style.backgroundColor = 'rgb(125, 249, 125)' 
+    sliderFill.style.boxShadow = '0 0 0 white' 
+    document.body.removeChild(careful)
+    document.body.removeChild(warning)
+    document.body.removeChild(danger)
+    document.body.removeChild(body)
+}
+
+document.addEventListener('click', reset)
