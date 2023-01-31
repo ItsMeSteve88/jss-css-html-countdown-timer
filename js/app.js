@@ -161,10 +161,9 @@ function surprise()
 }
 
 
-
-
-
 // function to reset the timer
+const resetButton = document.getElementById('#reset')
+
 function reset()
 {
     timeLeft = startCount
