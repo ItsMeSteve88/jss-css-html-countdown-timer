@@ -1,11 +1,12 @@
 body
 {
-    background: radial-gradient(
+    background: 
+    radial-gradient(
     circle,
     rgb(30,171,148) 0%,
     rgb(91,91,125) 40%,
     rgb(0,0,0) 100%
-  );
+    );
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -23,6 +24,7 @@ body
 width: 600px;
   height: 600px;
   border-radius: 50%;
+  border: none;
   box-shadow: 0px 0px 1px 1px #0000001a;
   display: flex;
   flex-direction: column;
@@ -31,35 +33,65 @@ width: 600px;
   text-align: center;
 }
 
-.custom-slider {
+.custom-slider 
+{
   width: 223px;
   height: 20px;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.fill {
+.fill 
+{
   height: 20px;
   background-color: rgb(125, 249, 125);
   width: 100%;
 }
 
-h1 {
+h1 
+{
   font-size: 100px;
   margin: 0;
 }
 
-.circle {
+/* .circle 
+{
   width: 10px;
   height: 10px;
   border-radius: 5px;
   position: absolute;
+} */
+
+.heart {
+  position: absolute;
 }
 
-.pulse {
-    animation: pulse-animation 1s 60;
-  }
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  left: 10px;
+  top: 0;
+  width: 10px;
+  height: 20px;
+  background-color: rgb(250, 63, 63);
+  border-radius: 10px 10px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+} 
+
+.pulse 
+{
+    animation: pulse-animation 1s 10;
+}
   
-  @keyframes pulse-animation {
+@keyframes pulse-animation 
+{
     0% {
       box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
     }
@@ -68,9 +100,9 @@ h1 {
     }
 }
 
-button
+button 
 {
-    background: rgb(255, 255, 255);
+    background: rgb(159, 159, 159);
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -78,6 +110,18 @@ button
     font-size: 20px;
     margin-top: 20px;
     cursor: pointer;
+}
+
+button a
+{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+button:hover
+{
+    background: rgb(0, 0, 0);
+    color: rgb(143, 140, 140);
 }
 
 
